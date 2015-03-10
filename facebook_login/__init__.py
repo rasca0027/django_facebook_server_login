@@ -3,7 +3,7 @@ from django.conf import settings
 from facebookads import FacebookSession
 from facebookads import FacebookAdsApi
 
-def set_api():
+def initialize():
     try:
         token = facebook_login.utils.get_token()
     except:
