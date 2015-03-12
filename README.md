@@ -4,6 +4,7 @@ A Djaingo app for facebook server side login
 ## Installation
 ```
 git clone https://github.com/ramusus/django-facebook-api.git
+cd django_facebook_server_login
 python setup.py install
 ```
 
@@ -13,6 +14,14 @@ Add to settings.py:
 APP_ID = ''
 APP_SECRET = ''
 REDIRECT_URL = ''
+```
+
+Add to `urls.py` in your project:
+```
+urlpatterns = patterns('',
+    ...
+    url(r'^server_login/', include('facebook_login.urls'))
+)
 ```
 
 ## Usage
@@ -30,8 +39,9 @@ Or:
 
 Using web browser:
 go to `your_host/server_login/login/` to login
-and `your_host/server_login/login_success/` to finish
-or just edit the `urls.py`, of course.
+and `your_host/server_login/login_success/` to finish login
+or `your_host/<pre-fix>/login_success/`,
+or whatever pre-fix you define in urls.py
 
 ## Get token
 
