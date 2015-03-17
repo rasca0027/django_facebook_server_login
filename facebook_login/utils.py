@@ -21,9 +21,13 @@ def login():
         print url
   
         code = raw_input('enter the code: ')
+        code = code.split('&expire')[0]
+
         url2 = 'https://graph.facebook.com/v2.2/oauth/access_token?client_id=' + APP_ID + '&redirect_uri=' + REDIRECT_URL + '&client_secret=' + APP_SECRET + '&code=' + code
   
         r = requests.get(url2)
+        if r.status_code != 200:
+            raise Exception("Not success")
         access_token = r.text[13:]
   
         # store access token
