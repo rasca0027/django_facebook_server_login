@@ -7,7 +7,10 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         
-        facebook_login.utils.login()
+        try:
+            print facebook_login.utils.get_token()
+        except:
+            facebook_login.utils.login()
             
 
         
