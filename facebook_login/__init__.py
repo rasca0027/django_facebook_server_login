@@ -4,10 +4,8 @@ from facebookads import FacebookSession
 from facebookads import FacebookAdsApi
 
 def initialize():
-    try:
-        token = facebook_login.utils.get_token()
-    except:
-        print "Please login first. Type `python manage.py server_login` to login."
+
+    token = facebook_login.utils.login()
 
     session = FacebookSession(settings.APP_ID, settings.APP_SECRET, token)
     api = FacebookAdsApi(session)
