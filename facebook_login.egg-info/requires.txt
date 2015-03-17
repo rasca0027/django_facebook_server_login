@@ -1,3 +1,0 @@
-requests
-facebookads
-django==1.5
