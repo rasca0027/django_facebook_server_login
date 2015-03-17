@@ -14,6 +14,7 @@ Add to settings.py:
 APP_ID = ''
 APP_SECRET = ''
 REDIRECT_URL = ''
+SCOPE = '' # example: ads_management,...
 ```
 
 Add to `urls.py` in your project:

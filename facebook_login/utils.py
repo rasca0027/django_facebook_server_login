@@ -15,8 +15,9 @@ def login():
         APP_ID = settings.APP_ID
         APP_SECRET = settings.APP_SECRET
         REDIRECT_URL = settings.REDIRECT_URL
+        SCOPE = settings.SCOPE
 
-        url = 'https://www.facebook.com/dialog/oauth?client_id=' + APP_ID + '&redirect_uri=' + REDIRECT_URL + '&scope=ads_management'
+        url = 'https://www.facebook.com/dialog/oauth?client_id=' + APP_ID + '&redirect_uri=' + REDIRECT_URL + '&scope=' + SCOPE
         print url
   
         code = raw_input('enter the code: ')
